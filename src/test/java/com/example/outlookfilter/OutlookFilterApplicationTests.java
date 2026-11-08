@@ -1,10 +1,10 @@
-package com.example.outlockfilter;
+package com.example.outlookfilter;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class OutlockFilterApplicationTests {
+class OutlookFilterApplicationTests {
 
 	@Test
 	void contextLoads() {

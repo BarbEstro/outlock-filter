@@ -1,13 +1,13 @@
-package com.example.outlockfilter;
+package com.example.outlookfilter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OutlockFilterApplication {
+public class OutlookFilterApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OutlockFilterApplication.class, args);
+		SpringApplication.run(OutlookFilterApplication.class, args);
 	}
 
 }
