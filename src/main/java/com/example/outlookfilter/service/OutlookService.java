@@ -41,6 +41,7 @@ public class OutlookService {
         );
 
         MessageCollectionResponse messageCollectionResponse = graphServiceClient.me().messages().get();
+
         if (messageCollectionResponse == null || messageCollectionResponse.getValue() == null) {
             return;
         }
@@ -74,6 +75,8 @@ public class OutlookService {
                 saveFileAttachment(fileAttachment, senderFolder);
             }
         }
+
+        messageIsRead(message.getId());
     }
 
     private void saveFileAttachment(FileAttachment fileAttachment, Path targetFolder) {
@@ -111,5 +114,15 @@ public class OutlookService {
             return "sconosciuto";
         }
         return sanitized;
+    }
+
+    private void messageIsRead(String messageId){
+        Message update = new Message();
+        update.setIsRead(true);
+
+        graphServiceClient.me()
+                .messages()
+                .byMessageId(messageId)
+                .patch(update);
     }
 }
